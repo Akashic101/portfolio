@@ -10,4 +10,5 @@ techstack:
     - Mantine
     - Cloudflare Tunnels
     - Docker
+    - selfhosted
 ---

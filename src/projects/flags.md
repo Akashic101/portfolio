@@ -11,4 +11,5 @@ techstack:
     - i18next
     - Cloudflare Tunnels
     - Docker
+    - selfhosted
 ---

@@ -12,4 +12,5 @@ techstack:
     - CSS3
     - RSS
     - Cloudflare Tunnels
+    - selfhosted
 ---

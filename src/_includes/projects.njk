@@ -1,6 +1,6 @@
 <section id="projects" class="bg-gray-100 dark:bg-slate-800 py-20">
     <div class="container mx-auto text-center">
-        <h2 class="text-3xl dark:text-slate-300 font-bold mb-4">My Projects</h2>
+        <h2 class="text-3xl dark:text-slate-300 font-bold mb-4">My personal Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {% for post in collections.projects %}
             <div class="bg-white dark:bg-slate-900 p-6 shadow rounded-lg flex flex-col justify-between">
@@ -10,11 +10,14 @@
                 </div>
                 <div class="mt-4 flex flex-wrap gap-2">
                     {% for tag in post.data.techstack %}
-                    <span
-                        class="inline-flex items-center dark:bg-slate-600 dark:text-slate-200 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">{{
-                        tag }}</span>
+                        <span
+                            class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 
+                            {% if tag == 'selfhosted' %} bg-yellow-400 dark:bg-yellow-500 text-white {% else %} dark:text-slate-200 {% endif %}">
+                            {{ tag }}
+                        </span>
                     {%- endfor -%}
                 </div>
+                
                 {% if post.data.link %}
                 <div class="mt-6 flex justify-between">
                     <a href="{{ post.data.link }}" target="_blank"

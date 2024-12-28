@@ -11,4 +11,5 @@ techstack:
     - HTML5
     - Tailwind
     - Cloudflare Tunnels
+    - selfhosted
 ---
