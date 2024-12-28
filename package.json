@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --port=3575",
     "build": "eleventy",
     "styles": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch --minify",
     "prod": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --minify && npx @11ty/eleventy"
