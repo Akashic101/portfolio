@@ -5,7 +5,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "styles": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch"
+    "styles": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch --minify"
   },
   "keywords": [],
   "author": "",
