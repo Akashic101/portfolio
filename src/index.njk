@@ -3,42 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="The portfolio-website of David Moll">
+    <meta name="keywords" content="Portfolio, web-development, 11ty">
+    <meta name="author" content="David Moll">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Moll - Portfolio</title>
     <link href="output.css" rel="stylesheet">
 </head>
 
-<body class="min-h-screen flex flex-col dark:bg-slate-800">
-    <nav class="bg-gray-800 dark:bg-slate-800 text-white sticky top-0">
+<body class="min-h-screen flex flex-col">
+
+    <nav class="bg-gray-800 text-white">
         <div class="container mx-auto flex items-center justify-between py-4 px-6">
             <a href="#" class="text-2xl font-bold">David Moll</a>
             <ul class="hidden md:flex space-x-6">
                 <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-400">About</a></li>
                 <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
                 <li><a href="#timeline" class="hover:text-blue-400">Timeline</a></li>
             </ul>
         </div>
     </nav>
-    <main id="home" class="flex-grow">
-        {% include "about-me.njk" %}
-        {% include "projects.njk" %}
-        {% include "timeline.njk" %}
 
-        <div class=" mx-auto flex justify-center items-center pb-20 dark:bg-slate-700">
-            <a href="mailto:contact@davidmoll.net">
-                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-4 px-8 text-lg rounded inline-flex items-center">
-                    <span>Contact</span>
-                </button>
-            </a>
-        </div>
+    <main class="flex-grow">
         
-        
+        {% include "about-me.njk" %}
+
+        {% include "projects.njk" %}
+
+        {% include "timeline.njk" %}
     </main>
 
     <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto text-center">
-            <p>&copy; {% currentYear %} David Moll. All rights reserved.</p>
+            <p>&copy; 2024 My Website. All rights reserved. Made with <a href="https://www.11ty.dev/">11ty</a></p>
         </div>
     </footer>
+
 </body>
+
 </html>
