@@ -3,6 +3,10 @@ const htmlNano = require('htmlnano');
 module.exports = function (eleventyConfig) {
         eleventyConfig.addPassthroughCopy("src/output.css");
 
+        eleventyConfig.addFilter("sortSkill", function (collection){
+            return collection.sort((a, b) => b.data.experience - a.data.experience);
+          })
+
         eleventyConfig.addShortcode("currentYear", () => {
            return new Date().getUTCFullYear()
         });
