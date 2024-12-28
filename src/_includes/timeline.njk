@@ -1,7 +1,7 @@
-<section id="timeline" class="py-20">
+<section id="timeline" class="py-20 dark:bg-slate-700">
     <div class="container mx-auto">
 
-    <h2 class="text-3xl font-bold mb-4 mx-auto text-center">Timeline</h2>
+    <h2 class="text-3xl font-bold dark:text-slate-300 mb-4 mx-auto text-center">Timeline</h2>
         <ol class="relative border-s border-gray-200">
             {% for post in collections.timeline %}
             <li class="mb-10 ms-6">
@@ -13,13 +13,13 @@
                             d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                     </svg>
                 </span>
-                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 ">{{ post.data.title }}</h3>
-                <h5 class="flex items-center mb-1 text-md font-semibold text-gray-900 ">{{ post.data.location }}</h5>
-                <time class="block mb-2 text-sm font-normal leading-none text-gray-400">
+                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-slate-200">{{ post.data.title }}</h3>
+                <h5 class="flex items-center mb-1 text-md font-semibold text-gray-900 dark:text-slate-400">{{ post.data.location }}</h5>
+                <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-slate-200">
                     {{ post.data.start | formatToLocateDate }} - {{ post.data.end | formatToLocateDate }}
                   </time>
                   
-                <p class="mb-4 text-base font-normal text-gray-500 ">{{ post.data.description }}</p>
+                <p class="mb-4 text-base font-normal text-gray-500 dark:text-slate-100">{{ post.data.description }}</p>
             </li>
             {% endfor %}
         </ol>
