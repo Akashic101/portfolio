@@ -1,3 +1,5 @@
+const htmlNano = require('htmlnano');
+
 module.exports = function (eleventyConfig) {
         eleventyConfig.addPassthroughCopy("src/output.css");
 
@@ -6,15 +8,12 @@ module.exports = function (eleventyConfig) {
         });
 
         eleventyConfig.addShortcode("yearsSince", () => {
-            const currentDate = new Date(); // Get the current date
-            const targetDate = new Date("2021-11-15"); // November 15, 2021
-            
-            // Calculate the difference in milliseconds
+            const currentDate = new Date();
+            const targetDate = new Date("2021-11-15");
             const diffTime = currentDate - targetDate;
-            
-            // Convert the difference to years
-            const yearsDifference = diffTime / (1000 * 60 * 60 * 24 * 365.25); // Taking leap years into account
-            return Math.floor(yearsDifference); // Return the number of full years
+
+            const yearsDifference = diffTime / (1000 * 60 * 60 * 24 * 365.25);
+            return Math.floor(yearsDifference);
         });
         
         eleventyConfig.addFilter("formatToLocateDate", function(value) {
@@ -22,6 +21,20 @@ module.exports = function (eleventyConfig) {
                 return value.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
             }
             return value;
+        });
+
+        eleventyConfig.addTransform('htmlnano', async (content, outputPath) => {
+            if (outputPath.endsWith('.html')) {
+                const { html } = await htmlNano.process(content, {
+                    collapseBooleanAttributes: true,
+                    collapseWhitespace: true,
+                    removeComments: true,
+                    removeEmptyAttributes: true,
+                    removeRedundantAttributes: true,
+                });
+                return html;
+            }
+            return content;
         });
         
     return {

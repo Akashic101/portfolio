@@ -1,18 +1,22 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
     "styles": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch --minify"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "11ty",
+    "portfolio",
+    "tailwind"
+  ],
+  "author": "David Moll",
   "license": "ISC",
-  "description": "",
+  "description": "My own personal blog",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "htmlnano": "^2.1.1",
     "tailwindcss": "^3.4.17"
   }
 }
