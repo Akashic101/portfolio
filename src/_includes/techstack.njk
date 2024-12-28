@@ -1,14 +1,48 @@
 <section id="techstack" class="py-20 dark:bg-slate-800">
     <div class="container mx-auto text-center">
-        <h2 class="text-3xl dark:text-slate-300 font-bold mb-4">My techstack</h2>
+        <h2 class="text-3xl dark:text-slate-300 font-bold">My techstack</h2>
     </div>
     <div class="container mx-auto">
+        <div class="flex justify-center items-center mb-8">
+            <div class="flex items-center pr-4">
+                <div class="w-3 h-3 rounded-full bg-green-500 mr-1"></div>
+                <p class="text-gray-900 dark:text-slate-300">Frameworks</p>
+            </div>
+            <div class="flex items-center pr-4">
+                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-1"></div>
+                <p class="text-gray-900 dark:text-slate-300">Languages</p>
+            </div>
+            <div class="flex items-center pr-4">
+                <div class="w-3 h-3 rounded-full bg-red-500 mr-1"></div>
+                <p class="text-gray-900 dark:text-slate-300">Dev-Tools</p>
+            </div>
+            <div class="flex items-center pr-4">
+                <div class="w-3 h-3 rounded-full bg-orange-500 mr-1"></div>
+                <p class="text-gray-900 dark:text-slate-300">Other</p>
+            </div>
+        </div>
+
+        <!-- Tech Stack Items -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {% for post in collections.techstack | sortSkill %}
-            <div class="bg-white dark:bg-slate-900 p-6 shadow rounded-lg flex flex-col justify-between">
+            <div class="
+                dark:bg-slate-900 
+                p-6 shadow rounded-lg flex flex-col justify-between
+                {% if post.data.category == 'language' %}
+                    border-2 border-white-900 border-l-yellow-500 dark:border-slate-900 dark:border-l-yellow-500
+                {% elif post.data.category == 'dev-tool' %}
+                    border-2 border-white-900 border-l-red-500 dark:border-slate-900 dark:border-l-red-500
+                {% elif post.data.category == 'framework' %}
+                    border-2 border-white-900 border-l-green-500 dark:border-slate-900 dark:border-l-green-500
+                {% elif post.data.category == 'other' %}
+                    border-2 border-white-900 border-l-orange-500 dark:border-slate-900 dark:border-l-orange-500
+                {% else %}
+                    border-2 border-slate-900 border-l-gray-500 dark:border-slate-900 dark:border-l-gray-500
+                {% endif %}
+            ">
                 <div>
                     <h3 class="text-xl dark:text-slate-300 font-bold">{{ post.data.title }}</h3>
-                    {% if post.data.description %} 
+                    {% if post.data.description %}
                     <h4 class="mb-1 text-xs italic text-gray-900 dark:text-slate-300">{{ post.data.description }}</h4>
                     {% endif %}
                     <div class="flex space-x-4">

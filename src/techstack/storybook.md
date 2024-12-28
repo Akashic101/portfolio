@@ -1,6 +1,6 @@
 ---
 tags: techstack
-title: Typescript
+title: Storybook
 experience: 75
-category: language
+category: dev-tool
 ---
