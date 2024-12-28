@@ -4,7 +4,8 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "styles": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch --minify"
+    "styles": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch --minify",
+    "prod": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --minify && npx @11ty/eleventy"
   },
   "keywords": [
     "11ty",
