@@ -9,34 +9,28 @@
 </head>
 
 <body class="min-h-screen flex flex-col">
-
-    <!-- Navbar -->
-    <nav class="bg-gray-800 text-white">
+    <nav class="bg-gray-800 text-white sticky top-0">
         <div class="container mx-auto flex items-center justify-between py-4 px-6">
-            <a href="#" class="text-2xl font-bold">MyLogo</a>
+            <a href="#" class="text-2xl font-bold">David Moll</a>
             <ul class="hidden md:flex space-x-6">
                 <li><a href="#home" class="hover:text-blue-400">Home</a></li>
-                <li><a href="#about" class="hover:text-blue-400">About</a></li>
-                <li><a href="#services" class="hover:text-blue-400">Services</a></li>
-                <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+                <li><a href="#timeline" class="hover:text-blue-400">Timeline</a></li>
             </ul>
             <button class="md:hidden text-2xl focus:outline-none">
                 ☰
             </button>
         </div>
     </nav>
-
-    <!-- Main Content -->
-    <main class="flex-grow">
-        
-        <section id="home" class="bg-gray-100 py-20">
+    <main id="home" class="flex-grow">
+        <section id="about" class="bg-gray-100 py-20">
     <div class="container mx-auto text-center">
         <h1 class="text-4xl font-bold mb-4">Hello, I am David</h1>
         <p class="text-lg text-gray-700">I like to build stuff and learn new things</p>
     </div>
 </section>
 
-<section id="about" class="bg-white py-20">
+<section class="bg-white py-20">
     <div class="container mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">About me</h2>
         <p class="text-gray-600 max-w-3xl mx-auto">
@@ -55,8 +49,7 @@
 
 
 
-
-        <section id="services" class="bg-gray-100 py-20">
+        <section id="projects" class="bg-gray-100 py-20">
     <div class="container mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4">My Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -237,8 +230,7 @@
         </div>
     </div>
 </section>
-
-        <section class="py-20">
+        <section id="timeline" class="py-20">
     <div class="container mx-auto">
 
     <h2 class="text-3xl font-bold mb-4 mx-auto text-center">Timeline</h2>
@@ -302,28 +294,21 @@
 </section>
 </div>
 
-        <section id="contact" class="bg-white py-20">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
-                <form class="max-w-lg mx-auto space-y-4">
-                    <input type="text" placeholder="Name" class="w-full px-4 py-2 border rounded-lg">
-                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border rounded-lg">
-                    <textarea placeholder="Message" class="w-full px-4 py-2 border rounded-lg"></textarea>
-                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
-                        Submit
-                    </button>
-                </form>
-            </div>
-        </section>
+        <div class=" mx-auto flex justify-center items-center pb-20">
+            <a href="mailto:contact@davidmoll.net">
+                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-4 px-8 text-lg rounded inline-flex items-center">
+                    <span>Contact</span>
+                </button>
+            </a>
+        </div>
+        
+        
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 My Website. All rights reserved.</p>
+            <p>&copy; 2024 David Moll. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
-
 </html>

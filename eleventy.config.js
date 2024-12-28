@@ -1,6 +1,10 @@
 module.exports = function (eleventyConfig) {
         eleventyConfig.addPassthroughCopy("src/output.css");
 
+        eleventyConfig.addShortcode("currentYear", () => {
+           return new Date().getUTCFullYear()
+        });
+
         eleventyConfig.addShortcode("yearsSince", () => {
             const currentDate = new Date(); // Get the current date
             const targetDate = new Date("2021-11-15"); // November 15, 2021
