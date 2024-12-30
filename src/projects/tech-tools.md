@@ -11,4 +11,5 @@ techstack:
     - Cloudflare Tunnels
     - Docker
     - selfhosted
+    - Nginx
 ---

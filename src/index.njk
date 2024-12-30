@@ -10,11 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Moll - Portfolio</title>
     <link href="output.css" rel="stylesheet">
-    <meta property="og:url" content="https://davidmoll.net"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="The portfolio of David Moll"/>
-    <meta property="og:description" content="Take a look at my skills, experience and projects"/>
-    <meta property="og:locale" content="en_GB"/>
+    <meta property="og:url" content="https://davidmoll.net" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The portfolio of David Moll" />
+    <meta property="og:description" content="Take a look at my skills, experience and projects" />
+    <meta property="og:locale" content="en_GB" />
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -32,7 +32,7 @@
     </nav>
 
     <main class="flex-grow">
-        
+
         {% include "about-me.njk" %}
 
         {% include "techstack.njk" %}
@@ -40,11 +40,21 @@
         {% include "projects.njk" %}
 
         {% include "timeline.njk" %}
+
+        <section class="bg-gray-100 dark:bg-slate-800">
+            <div class="flex justify-center py-24">
+                <a href="mailto:contact@davidmoll.net"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 px-10 rounded-xl text-2xl shadow-xl transition duration-300 transform hover:scale-105">
+                    Contact
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto text-center">
-            <p>&copy; {{ currentYear }} David Moll. All rights reserved. Made with <a href="https://www.11ty.dev/">11ty</a></p>
+            <p>&copy; {{ currentYear }} David Moll. All rights reserved. Made with <a
+                    href="https://www.11ty.dev/">11ty</a></p>
         </div>
     </footer>
 

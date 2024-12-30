@@ -12,4 +12,5 @@ techstack:
     - Tailwind
     - Cloudflare Tunnels
     - selfhosted
+    - Nginx
 ---

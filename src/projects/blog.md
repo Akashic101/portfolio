@@ -13,4 +13,5 @@ techstack:
     - RSS
     - Cloudflare Tunnels
     - selfhosted
+    - Nginx
 ---
