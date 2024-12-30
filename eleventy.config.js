@@ -2,6 +2,7 @@ const htmlNano = require('htmlnano');
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/output.css");
+    eleventyConfig.addPassthroughCopy("src/assets/");
 
     eleventyConfig.addFilter("sortSkill", function (collection) {
         return collection.sort((a, b) => b.data.experience - a.data.experience);

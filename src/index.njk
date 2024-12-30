@@ -15,7 +15,8 @@
     <meta property="og:title" content="The portfolio of David Moll" />
     <meta property="og:description" content="Take a look at my skills, experience and projects" />
     <meta property="og:locale" content="en_GB" />
-    <script defer src="https://umami.davidmoll.net/script.js" data-website-id="4527d63b-7314-4ea1-bce2-6657940ca9b6"></script>
+    <script defer src="https://umami.davidmoll.net/script.js"
+        data-website-id="4527d63b-7314-4ea1-bce2-6657940ca9b6"></script>
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -43,11 +44,25 @@
         {% include "timeline.njk" %}
 
         <section class="bg-gray-100 dark:bg-slate-800">
-            <div class="flex justify-center py-24">
-                <a href="mailto:contact@davidmoll.net"
-                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 px-10 rounded-xl text-2xl shadow-xl transition duration-300 transform hover:scale-105">
-                    Contact
-                </a>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-24">
+                <div class="flex items-center justify-center">
+                    <a href="mailto:contact@davidmoll.net"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold m-5 py-5 px-6 rounded-xl text-2xl shadow-xl transition duration-300 transform hover:scale-105 text-center max-w-xs">
+                        Contact
+                    </a>
+                </div>
+                <div class="flex items-center justify-center">
+                    <a href="/assets/David-Moll-CV-Deutsch.pdf" target="_blank"
+                        class="bg-green-600 hover:bg-green-700 text-white font-bold m-5 py-5 px-6 rounded-xl text-2xl shadow-xl transition duration-300 transform hover:scale-105 text-center max-w-xs">
+                        Résumé (German)
+                    </a>
+                </div>
+                <div class="flex items-center justify-center">
+                    <a href="/assets/David-Moll-CV-English.pdf" target="_blank"
+                        class="bg-green-600 hover:bg-green-700 text-white font-bold m-5 py-5 px-6 rounded-xl text-2xl shadow-xl transition duration-300 transform hover:scale-105 text-center max-w-xs">
+                        Résumé (English)
+                    </a>
+                </div>
             </div>
         </section>
     </main>
