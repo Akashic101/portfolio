@@ -1,26 +1,5 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy",
-    "styles": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch",
-    "prod": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --minify && npx @11ty/eleventy"
-  },
-  "keywords": [
-    "11ty",
-    "portfolio",
-    "tailwind"
-  ],
-  "author": "David Moll",
-  "license": "ISC",
-  "description": "My own personal blog",
-  "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "cssnano": "^7.0.6",
-    "htmlnano": "^2.1.1",
-    "svgo": "^3.3.2",
-    "tailwindcss": "^3.4.17",
-    "terser": "^5.37.0"
+  "dependencies": {
+    "@11ty/font-awesome": "^1.0.0-beta.1"
   }
 }

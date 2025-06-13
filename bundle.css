@@ -1,0 +1,193 @@
+html {
+  background-color: black;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+.header {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  user-select: none;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.header span {
+  pointer-events: auto;
+  transition: font-weight 0.3s ease, font-family 0.3s ease;
+  cursor: pointer;
+  line-height: 1.0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav a:focus,
+nav a:active {
+  color: #00ddff;
+}
+
+#hexCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+a {
+  color: rgb(0, 238, 198);
+}
+
+.hidden-link {
+  color: white;
+  text-decoration: none;
+}
+
+.size-1 {
+  vertical-align: baseline;
+  margin: 0 0.3em;
+  width: 1em;
+  height: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-section {
+  width: 45vw;
+}
+
+.projects-section h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #1e1e1e;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project-info h2 {
+  margin: 0 1rem 0 0;
+}
+
+.project-info p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #00ddff;
+  color: #121212;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.pill {
+  display: inline-block;
+  background: rgb(141, 239, 250);
+  color: black;
+  padding: 0.2em 0.6em;
+  font-size: 0.75rem;
+  border-radius: 5px;
+  vertical-align: middle;
+  font-weight: 600;
+  user-select: none;
+}
+
+.gold {
+  background: #FFD700;
+}
+
+@media (max-width: 600px) {
+  html, body {
+    justify-content: flex-start;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .header {
+    font-size: 2.5rem;
+    margin: 1rem auto;
+    max-width: 90vw;
+    padding: 0 1rem;
+  }
+
+  header {
+    max-width: 90vw;
+    margin: 1rem auto;
+    padding: 0.75rem 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 1.25rem;
+  }
+
+  .contact-container {
+    max-width: 90vw;
+    margin: 3rem auto;
+    padding: 1rem;
+  }
+}

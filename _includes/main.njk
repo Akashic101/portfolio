@@ -1,0 +1,39 @@
+---
+title: David
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hex Grid Canvas Hover</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Fira+Code&family=Source+Code+Pro&family=IBM+Plex+Mono&family=JetBrains+Mono&family=Ubuntu+Mono&family=Cutive+Mono&family=Share+Tech+Mono&family=Overpass+Mono&family=Inconsolata&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/bundle.css" />
+  </head>
+  <body>
+
+    {% getBundle "fontawesome" %}
+<div class="header">
+  <span>D</span><span>a</span><span>v</span><span>i</span><span>d</span><span> </span><span>M</span><span>o</span><span>l</span><span>l</span>
+</div>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/index">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    {{ content | safe }}
+    <canvas id="hexCanvas"></canvas>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>
