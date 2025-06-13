@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "@11ty/font-awesome": "^1.0.0-beta.1"
-  }
+  },
+  "name": "portfolio",
+  "version": "2.0.0",
+  "description": "My personal portfolio",
+  "main": "index.md",
+  "author": "David Moll",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akashic101/portfolio.git"
+  },
+  "keywords": [
+    "11ty",
+    "portfolio"
+  ],
+  "bugs": {
+    "url": "https://github.com/Akashic101/portfolio/issues"
+  },
+  "homepage": "https://github.com/Akashic101/portfolio#readme"
 }
