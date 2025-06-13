@@ -27,10 +27,10 @@ title: David
     </style>
   </head>
   <body>
-    <div class="header">
-      <span id="typed-text"></span>
-    </div>
     <header>
+      <div class="header">
+        <span id="typed-text"></span>
+      </div>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -41,8 +41,10 @@ title: David
         </ul>
       </nav>
     </header>
-    {{ content | safe }}
-    <canvas id="hexCanvas"></canvas>
+    <main>
+      {{ content | safe }}
+      <canvas id="hexCanvas"></canvas>
+    </main>
 
     <footer class="site-footer">
       <p>
