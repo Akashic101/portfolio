@@ -40,26 +40,28 @@ nav ul, ul {
   gap: 2rem;
 }
 
-nav a, .hidden-link, a {
-  text-decoration: none;
+nav a, .hidden-link {
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 nav a {
   color: white;
   font-weight: 600;
   font-size: 1.1rem;
+  text-decoration: underline;
 }
 
 nav a:hover,
 nav a:focus,
 nav a:active {
   color: #00ddff;
+  text-decoration: underline;
 }
 
 a {
   color: rgb(0, 238, 198);
+  text-decoration: underline;
 }
 
 .size-1 {
@@ -150,6 +152,15 @@ a {
   font-size: 0.9rem;
   color: #969696;
   text-align: center;
+}
+
+.site-footer a {
+  color: white;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  text-decoration: underline;
 }
 
 #hexCanvas {
