@@ -1,7 +1,6 @@
 import fontAwesomePlugin from "@11ty/font-awesome";
 import CleanCSS from "clean-css";
 import { minify } from "terser";
-const skiplink = require('eleventy-plugin-skiplink');
 
 export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("bundle.css");
