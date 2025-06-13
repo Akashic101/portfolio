@@ -1,12 +1,21 @@
 html {
   background-color: black;
-}
-
-html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,24 +39,27 @@ html, body {
   pointer-events: auto;
   transition: font-weight 0.3s ease, font-family 0.3s ease;
   cursor: pointer;
-  line-height: 1.0;
+  line-height: 1;
 }
 
-nav ul {
+nav ul, ul {
   list-style: none;
-  display: flex;
-  gap: 2rem;
   margin: 0;
   padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a, .hidden-link, a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 nav a {
   color: white;
-  text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
-  cursor: pointer;
 }
 
 nav a:hover,
@@ -56,23 +68,8 @@ nav a:active {
   color: #00ddff;
 }
 
-#hexCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
-}
-
 a {
   color: rgb(0, 238, 198);
-}
-
-.hidden-link {
-  color: white;
-  text-decoration: none;
 }
 
 .size-1 {
@@ -80,12 +77,6 @@ a {
   margin: 0 0.3em;
   width: 1em;
   height: 1em;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .about-section {
@@ -134,7 +125,6 @@ ul {
   padding: 0.5rem 1rem;
   background: #00ddff;
   color: #121212;
-  text-decoration: none;
   font-weight: 600;
   border-radius: 4px;
 }
@@ -153,6 +143,28 @@ ul {
 
 .gold {
   background: #FFD700;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  z-index: 1000;
+}
+
+#hexCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
 
 @media (max-width: 600px) {
@@ -189,5 +201,9 @@ ul {
     max-width: 90vw;
     margin: 3rem auto;
     padding: 1rem;
+  }
+
+  .site-footer {
+    position: static; /* make footer scroll normally */
   }
 }
