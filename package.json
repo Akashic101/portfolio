@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@11ty/eleventy": "^3.1.1",
-    "@11ty/font-awesome": "^1.0.0-beta.1"
+    "@11ty/font-awesome": "^1.0.0-beta.1",
+    "clean-css": "^5.3.3",
+    "terser": "^5.42.0"
   },
   "name": "portfolio",
   "version": "2.0.0",
@@ -9,6 +11,7 @@
   "main": "index.md",
   "author": "David Moll",
   "license": "ISC",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Akashic101/portfolio.git"
