@@ -18,7 +18,7 @@ title: Projects
         <span class="pill">Jira & Confluence</span>
         <p>Marketing of an innovative SaaS product for the AI-supported generation of end-to-end tests based on textual test case descriptions.</p>
         <div class="project-links">
-          <a href="https://www.kiteto.ai/" class="btn">Website</a>
+          <a href="https://www.kiteto.ai/" target="_blank" rel="noopener" class="btn">Website</a>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@ title: Projects
         <span class="pill">Github Actions</span>
         <p>Extension and maintenance of several tools and libraries for Angular based on Bootstrap and KeenThemes. The focus of the project was on expanding the UI library that is used throughout the company.
         <div class="project-links">
-          <a href="https://www.lynq.tech/" class="btn">Website</a>
+          <a href="https://www.lynq.tech/" target="_blank" rel="noopener" class="btn">Website</a>
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@ title: Projects
         <span class="pill">Github Actions</span>
         <p>Creation of a platform for the (partially) automatic creation and processing of employee expenses and a further platform for the automation of project findings for employees.</p>
         <div class="project-links">
-          <a href="https://xapling.de/" class="btn">Website</a>
+          <a href="https://xapling.de/" target="_blank" rel="noopener" class="btn">Website</a>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@ title: Projects
         <span class="pill">Docker</span>
         <p>Design and Development of ACC Drive, a tool making you a better simracer</p>
         <div class="project-links">
-          <a href="https://accdrive.com/" class="btn">Website</a>
+          <a href="https://accdrive.com/" target="_blank" rel="noopener" class="btn">Website</a>
         </div>
       </div>
     </div>
@@ -114,8 +114,8 @@ title: Projects
         <span class="pill">nginx</span>
         <p>My personal Blog</p>
         <div class="project-links">
-          <a href="https://blog.davidmoll.net/" class="btn">Website</a>
-          <a href="https://github.com/akashic101/blog" class="btn">Code</a>
+          <a href="https://blog.davidmoll.net/" target="_blank" rel="noopener" class="btn">Website</a>
+          <a href="https://github.com/akashic101/blog" target="_blank" rel="noopener" class="btn">Code</a>
         </div>
       </div>
     </div>
@@ -131,8 +131,8 @@ title: Projects
         <span class="pill">nginx</span>
         <p>A mini-game testing your knowledge of the flags of the world</p>
         <div class="project-links">
-          <a href="https://flags.davidmoll.net/" class="btn">Website</a>
-          <a href="https://github.com/Akashic101/flag-guesser" class="btn">Code</a>
+          <a href="https://flags.davidmoll.net/" target="_blank" rel="noopener" class="btn">Website</a>
+          <a href="https://github.com/Akashic101/flag-guesser" target="_blank" rel="noopener" class="btn">Code</a>
         </div>
       </div>
     </div>
@@ -148,8 +148,8 @@ title: Projects
         <span class="pill">nginx</span>
         <p>A collection of tech-tools making the daily life of a developer easier</p>
         <div class="project-links">
-          <a href="https://tech-tools.davidmoll.net/" class="btn">Website</a>
-          <a href="https://github.com/akashic101/tech-tools" class="btn">Code</a>
+          <a href="https://tech-tools.davidmoll.net/" target="_blank" rel="noopener" class="btn">Website</a>
+          <a href="https://github.com/akashic101/tech-tools" target="_blank" rel="noopener" class="btn">Code</a>
         </div>
       </div>
     </div>
@@ -167,8 +167,8 @@ title: Projects
         <span class="pill">Nginx</span>
         <p>My personal photography gallery</p>
         <div class="project-links">
-          <a href="https://gallery.davidmoll.net/" class="btn">Website</a>
-          <a href="https://github.com/Akashic101/gallery" class="btn">Code</a>
+          <a href="https://gallery.davidmoll.net/" target="_blank" rel="noopener" class="btn">Website</a>
+          <a href="https://github.com/Akashic101/gallery" target="_blank" rel="noopener" class="btn">Code</a>
         </div>
       </div>
     </div>
