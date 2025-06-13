@@ -8,6 +8,8 @@ let hexWidth, hexHeight, horizSpacing, vertSpacing;
 
 let hexCenters = [];
 
+const maxBrightness = 100; // Define maxBrightness globally
+
 /**
  * Adjusts the canvas size and hexagon parameters based on the window's dimensions.
  * It sets the canvas width and height, scales the context for high-DPI screens,
@@ -53,7 +55,7 @@ function calculateHexCenters() {
     for (let row = 0; row < rows; row++) {
       const x = col * horizSpacing;
       const y = row * vertSpacing + (col % 2 === 1 ? vertSpacing / 2 : 0);
-      hexCenters.push({ x, y, currentShade: 0 });
+      hexCenters.push({ x, y, currentShade: 0, waveShade: 0 });
     }
   }
 }
@@ -82,6 +84,8 @@ function drawHex(x, y, fillShade) {
 let mouseX = -2000;
 let mouseY = -2000;
 
+let activeWaves = []; // Stores information about all active waves
+
 window.addEventListener("resize", resize);
 window.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
@@ -90,6 +94,50 @@ window.addEventListener("mousemove", (e) => {
 window.addEventListener("mouseleave", () => {
   mouseX = -2000;
   mouseY = -2000;
+});
+
+/**
+ * Finds the hexagon closest to the given mouse coordinates.
+ * @param {number} mouseX - The x-coordinate of the mouse.
+ * @param {number} mouseY - The y-coordinate of the mouse.
+ * @returns {object|null} The closest hexagon object or null if none is found within a reasonable distance.
+ */
+function findClickedHex(mouseX, mouseY) {
+  let closestHex = null;
+  let minDist = Infinity;
+
+  for (const hex of hexCenters) {
+    const dx = mouseX - hex.x;
+    const dy = mouseY - hex.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    // Consider a hexagon "clicked" if the mouse is within its side length
+    if (dist < side && dist < minDist) {
+      minDist = dist;
+      closestHex = hex;
+    }
+  }
+  return closestHex;
+}
+
+/**
+ * Initiates a wave animation radiating from the clicked hexagon.
+ * @param {object} clickedHex - The hexagon object that was clicked.
+ */
+function startWaveEffect(clickedHex) {
+  activeWaves.push({
+    hex: clickedHex,
+    startTime: performance.now(),
+    intensity: maxBrightness * 0.05 // Reduced initial intensity for a less bright wave
+  });
+}
+
+canvas.addEventListener("click", (e) => {
+  const clickedHex = findClickedHex(e.clientX, e.clientY);
+  if (clickedHex) {
+    // Initiate wave effect from clickedHex
+    startWaveEffect(clickedHex);
+  }
 });
 
 resize();
@@ -106,10 +154,49 @@ function animate() {
     const dx = mouseX - hex.x;
     const dy = mouseY - hex.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
-const maxBrightness = 100;
-const targetShade = Math.max(0, 1 - dist / 200) * maxBrightness;
+    const targetShade = Math.max(0, 1 - dist / 200) * maxBrightness;
 
     hex.currentShade += (targetShade - hex.currentShade) * 0.04;
+
+    // Reset waveShade for this frame
+    hex.waveShade = 0;
+
+    // Wave effect logic
+    // Iterate through all active waves and apply their effects
+    for (let i = activeWaves.length - 1; i >= 0; i--) {
+      const wave = activeWaves[i];
+      const timeElapsed = performance.now() - wave.startTime;
+      const waveRadius = timeElapsed * 1.0; // Speed of the wave
+      const maxWaveRadius = 1000; // How far the wave can travel
+      const waveFadeDuration = 1000; // Duration of overall wave presence
+
+      const dx_wave = wave.hex.x - hex.x;
+      const dy_wave = wave.hex.y - hex.y;
+      const dist_wave = Math.sqrt(dx_wave * dx_wave + dy_wave * dy_wave);
+
+      // Calculate intensity based on distance from wave center AND wave progression
+      let waveIntensity = 0;
+      if (dist_wave < waveRadius + (side * 4) && dist_wave > waveRadius - (side * 4)) {
+        const normalizedDist = Math.abs(dist_wave - waveRadius) / (side * 2);
+        waveIntensity = wave.intensity * (1 - normalizedDist); // Peak at waveRadius, fades towards edges of band
+      }
+
+      // Add fading effect as wave travels outwards
+      const fadeFactor = 1 - (waveRadius / maxWaveRadius); // Fades as waveRadius approaches maxWaveRadius
+      waveIntensity = waveIntensity * Math.max(0, fadeFactor); // Apply fade factor, ensure non-negative
+
+      hex.waveShade += waveIntensity; // Accumulate wave shades from all active waves
+
+      // Remove the wave if it has completely faded out or traveled too far
+      if (timeElapsed > waveFadeDuration + (maxWaveRadius / 1.0) || waveRadius > maxWaveRadius + side * 4) {
+        activeWaves.splice(i, 1); // Remove current wave from the array
+      }
+    }
+
+    // Apply a slight decay per frame for the accumulated wave shade
+    hex.waveShade *= 0.95; // Slight decay for individual wave components
+
+    hex.currentShade = Math.max(0, Math.min(maxBrightness, hex.currentShade + hex.waveShade)); // Ensure shade stays within bounds
 
     drawHex(hex.x, hex.y, Math.round(hex.currentShade));
   }
