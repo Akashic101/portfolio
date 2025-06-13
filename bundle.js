@@ -84,7 +84,8 @@ function animate() {
     const dx = mouseX - hex.x;
     const dy = mouseY - hex.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
-    const targetShade = Math.max(0, 1 - dist / 200) * 255;
+const maxBrightness = 100;
+const targetShade = Math.max(0, 1 - dist / 200) * maxBrightness;
 
     hex.currentShade += (targetShade - hex.currentShade) * 0.04;
 
