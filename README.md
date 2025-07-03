@@ -14,10 +14,6 @@ This is the repo of my personal portfolio powered by 11ty. You can access it und
 
 - Initial release 🎉
 
-## Roadmap
-
-- Add resume
-
 ## Installation
 
 - Clone this repo with `git clone https://github.com/akashic101/portfolio`
