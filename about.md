@@ -7,8 +7,7 @@ title: About me
 
 <section class="about-section">
     <p>
-      I am 27 years old, living in Germany with my two cats and am currently job-hunting ;) 
-      (<a href="/contact" >Let's connect</a> if you are in need of an experienced web-developer). 
+      I am 27 years old, living in Germany with my two cats and love frontend-developing
       I have worked across a wide variety of projects from developing a CRUD-system to manage employees and contracts to expanding, developing and maintaining the custom UI-library of an energy supply company in Germany. 
       You can check out the full list of all my projects <a href="/projects">here</a>.
     </p>
